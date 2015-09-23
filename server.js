@@ -11,9 +11,5 @@ app.get('/partialViews/:partialName', function(req, res) {
     res.redirect('/partials/' + partialName + '.html');
 });
 
-app.get('*', function(req, res) {
-    res.send('index.html');
-});
-
 app.listen(port);
 console.log('Server up and running on port: ' + port);
