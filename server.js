@@ -1,4 +1,4 @@
-/* globals require, __dirname */
+/* globals require, __dirname, process */
 var express = require('express'),
     app = express(),
     port = process.env.PORT || 3030;
@@ -12,7 +12,7 @@ app.get('/partialViews/:partialName', function(req, res) {
 });
 
 app.get('*', function(req, res) {
-    res.redirect('index.html');
+    res.send('index.html');
 });
 
 app.listen(port);
