@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"postinstall": "bower install"
+    "postinstall": "bower install"
   },
   "engines": {
     "node": "0.12.x",
@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/TsvetanMilanov/AngularJSTestApp#readme",
   "dependencies": {
-    "bower": "^1.5.2",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
     "mongoose": "^4.1.8"
