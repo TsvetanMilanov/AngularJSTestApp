@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS test app</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/lib/toastr/toastr.css">
+</head>
+<body ng-app="app" ng-controller="MainController">
+    <ul class="nav navbar-nav navbar-left">
+        <li><a href="#/">Home</a></li>
+        <li ng-hide="hasLoggedInUser"><a href="#/register">Register</a></li>
+    </ul>
+    <br>
+    <h1>Hi from express!</h1>
+
+    <div id="container" class="container" ng-view></div>
+
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/angular/angular.js"></script>
+    <script src="/lib/angular-resource/angular-resource.js"></script>
+    <script src="/lib/angular-route/angular-route.js"></script>
+    <script src="/lib/toastr/toastr.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/mainController.js"></script>
+    <script src="/app/homeController.js"></script>
+    <script src="/app/registerController.js"></script>
+</body>
+</html>
