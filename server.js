@@ -1,7 +1,7 @@
 /* globals require, __dirname */
 var express = require('express'),
     app = express(),
-    port = 3030;
+    port = process.env.PORT || 3030;
 
 app.use(express.static(__dirname + '/public/'));
 
