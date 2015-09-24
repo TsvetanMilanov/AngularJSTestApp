@@ -1,6 +1,5 @@
 /* globals module, require, Buffer */
-var zlib = require('zlib'),
-    Picture = require('mongoose').connection.model('Picture'),
+var Picture = require('mongoose').connection.model('Picture'),
     ACCEPTABLE_IMAGE_FORMATS = [
         'png',
         'jpg',
@@ -40,8 +39,7 @@ module.exports = {
 
                     // res.contentType('image/' + picture.extension);
                     // res.send(picture.buffer);
-
-                    res.redirect('/');
+                    res.end();
                 });
             });
 
