@@ -18,7 +18,7 @@ module.exports = function() {
 
     database.once('open', function(err) {
         if (!err) {
-            console.log("Database up and running!");
+            console.log("Database up and running on: " + env);
         } else {
             console.log(err);
         }

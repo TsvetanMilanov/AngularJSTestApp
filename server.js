@@ -1,7 +1,7 @@
 /* globals require, __dirname, process */
 var express = require('express'),
-    routeConfig = require('./server/config/route'),
     mongooseConfig = require('./server/config/mongoose'),
+    routeConfig = require('./server/config/route'),
     app = express(),
     port = process.env.PORT || 3030;
 
