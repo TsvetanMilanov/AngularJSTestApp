@@ -41,7 +41,7 @@ module.exports = {
                     // res.contentType('image/' + picture.extension);
                     // res.send(picture.buffer);
 
-                    res.end();
+                    res.redirect('/');
                 });
             });
 
