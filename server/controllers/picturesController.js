@@ -26,7 +26,8 @@ module.exports = {
 
             file.on('data', function(data) {
                 var newPicture = {
-                    buffer: zlib.deflateSync(data),
+                    //buffer: zlib.deflateSync(data),
+                    buffer: data,
                     name: pictureName,
                     extension: fileExtension
                 };
@@ -58,7 +59,8 @@ module.exports = {
                 return;
             }
 
-            image.buffer = zlib.inflateSync(image.buffer);
+            //image.buffer = zlib.inflateSync(image.buffer);
+            image.buffer = image.buffer;
 
             res.contentType('image/' + image.extension);
             res.send(image.buffer);
