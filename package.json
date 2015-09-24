@@ -28,7 +28,6 @@
     "connect-busboy": "0.0.2",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
-    "mongoose": "^4.1.8",
-    "zlib": "^1.0.5"
+    "mongoose": "^4.1.8"
   }
 }
