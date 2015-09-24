@@ -6,6 +6,9 @@ app.config(function($routeProvider) {
         .when('/messages', {
             templateUrl: '/partialViews/allMessages',
             controller: 'MessagesController'
+        }).when('/pictures', {
+            templateUrl: '/partialViews/pictures',
+            controller: 'PicturesController'
         })
         .when('/uploadPicture', {
             templateUrl: '/partialViews/uploadPicture'

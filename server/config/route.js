@@ -11,6 +11,8 @@ module.exports.setRoutes = function(app) {
 
     app.post('/uploadPicture', picturesControlelr.uploadPicture);
 
+    app.get('/allPictures', picturesControlelr.getAllPictures);
+
     app.get('/images/:id', picturesControlelr.getImageById);
 
     app.post('/messages/add', messagesController.addMessage);

@@ -1,0 +1,14 @@
+<h2>Pictures:</h2>
+<table class="table">
+    <tr>
+        <th>Name:</th>
+    </tr>
+    <tr ng-repeat="image in images">
+        <td>
+            <u>{{image.name}}.{{image.extension}}</u>
+            <div>
+                <img src="/images/{{image._id}}" alt="{{image.name}}" />
+            </div>
+        </td>
+    </tr>
+</table>

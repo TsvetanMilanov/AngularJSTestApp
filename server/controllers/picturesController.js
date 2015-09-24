@@ -1,5 +1,6 @@
 /* globals module, require, Buffer */
-var Picture = require('mongoose').connection.model('Picture'),
+var zlib = require('zlib'),
+    Picture = require('mongoose').connection.model('Picture'),
     ACCEPTABLE_IMAGE_FORMATS = [
         'png',
         'jpg',
@@ -25,7 +26,7 @@ module.exports = {
 
             file.on('data', function(data) {
                 var newPicture = {
-                    buffer: data,
+                    buffer: zlib.deflateSync(data),
                     name: pictureName,
                     extension: fileExtension
                 };
@@ -57,8 +58,15 @@ module.exports = {
                 return;
             }
 
+            image.buffer = zlib.inflateSync(image.buffer);
+
             res.contentType('image/' + image.extension);
             res.send(image.buffer);
+        });
+    },
+    getAllPictures: function(req, res) {
+        Picture.find({}).exec(function(err, pictures) {
+            res.send(pictures);
         });
     }
 };
