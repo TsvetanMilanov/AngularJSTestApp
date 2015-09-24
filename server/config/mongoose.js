@@ -1,6 +1,7 @@
 /* globals module, require, process */
 var mongoose = require('mongoose'),
     MessageModel = require('./../models/message'),
+    PictureModel = require('./../models/picture'),
     env = process.env.NODE_ENV || 'development';
 
 module.exports = function() {
@@ -25,4 +26,5 @@ module.exports = function() {
     });
 
     MessageModel.seedInitialData();
+    PictureModel.seedInitialData();
 };

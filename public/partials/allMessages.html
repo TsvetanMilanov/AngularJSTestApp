@@ -1,11 +1,13 @@
 <h3>Messages:</h3>
 <table class="table">
     <tr>
+        <th>Id:</th>
         <th>Author:</th>
         <th>Content:</th>
     </tr>
     <tr ng-repeat="message in messages">
-        <td>{{message.author}}</td>
-        <td>{{message.content}}</td>
+        <td class="col-md-2">{{message._id}}</td>
+        <td class="col-md-1">{{message.author}}</td>
+        <td class="col-md-6">{{message.content}}</td>
     </tr>
 </table>

@@ -1,5 +1,6 @@
 /* globals module, require*/
-var messagesController = require('./../controllers/messagesController');
+var messagesController = require('./../controllers/messagesController'),
+    picturesControlelr = require('./../controllers/picturesController');
 
 module.exports.setRoutes = function(app) {
     app.get('/partialViews/:partialName', function(req, res) {
@@ -7,6 +8,12 @@ module.exports.setRoutes = function(app) {
 
         res.redirect('/partials/' + partialName + '.html');
     });
+
+    app.post('/uploadPicture', picturesControlelr.uploadPicture);
+
+    app.get('/images/:id', picturesControlelr.getImageById);
+
+    app.post('/messages/add', messagesController.addMessage);
 
     app.get('/api/messages', messagesController.getAllMessages);
 

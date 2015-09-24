@@ -7,6 +7,13 @@ app.config(function($routeProvider) {
             templateUrl: '/partialViews/allMessages',
             controller: 'MessagesController'
         })
+        .when('/uploadPicture', {
+            templateUrl: '/partialViews/uploadPicture'
+        })
+        .when('/addMessage', {
+            templateUrl: '/partialViews/addMessage',
+            controller: 'AddMessageController'
+        })
         .when('/register', {
             templateUrl: '/partialViews/register',
             controller: 'RegisterController'
@@ -14,5 +21,8 @@ app.config(function($routeProvider) {
         .when('/', {
             templateUrl: '/partialViews/home',
             controller: 'HomeController'
+        })
+        .otherwise({
+            redirectTo: '/'
         });
 });

@@ -11,10 +11,11 @@
         <li><a href="#/">Home</a></li>
         <li><a href="#/messages">Messages</a></li>
         <li><a href="#/addMessage">Add Message</a></li>
+        <li><a href="#/uploadPicture">Upload Picture</a></li>
         <li ng-hide="hasLoggedInUser"><a href="#/register">Register</a></li>
     </ul>
     <br>
-    <h1>Hi from express!</h1>
+    <h1>AngularJS Test Application</h1>
 
     <div id="container" class="container" ng-view></div>
 
@@ -27,6 +28,7 @@
     <script src="/app/mainController.js"></script>
     <script src="/app/homeController.js"></script>
     <script src="/app/messagesController.js"></script>
+    <script src="/app/addMessageController.js"></script>
     <script src="/app/registerController.js"></script>
 </body>
 </html>
