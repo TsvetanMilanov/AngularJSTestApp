@@ -27,7 +27,6 @@ module.exports = {
             }
 
             file.on('data', function(data) {
-                console.log('Data: ');
                 buffer = Buffer.concat([buffer, data]);
 
                 file.resume();
