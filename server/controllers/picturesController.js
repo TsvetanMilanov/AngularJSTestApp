@@ -1,4 +1,4 @@
-/* globals module, require, Buffer */
+/* globals module, require */
 var Picture = require('mongoose').connection.model('Picture'),
     ACCEPTABLE_IMAGE_FORMATS = [
         'png',
@@ -26,22 +26,31 @@ module.exports = {
             }
 
             file.on('data', function(data) {
-                newPicture = {
+                newPicture = new Picture({
                     buffer: data,
                     name: pictureName,
                     extension: fileExtension
-                };
+                });
             });
 
             file.on('end', function() {
-                Picture.create(newPicture, function(err, picture) {
+                newPicture.save(function(err, picture) {
                     if (err) {
-                        res.send(400);
-                        return;
+                        console.log(err);
                     }
 
+                    console.log(picture.name);
                     res.redirect('/');
                 });
+
+                // Picture.create(newPicture, function(err, picture) {
+                //     if (err) {
+                //         res.send(400);
+                //         return;
+                //     }
+                //
+                //     res.redirect('/');
+                // });
             });
         });
     },
