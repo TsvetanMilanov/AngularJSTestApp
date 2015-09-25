@@ -10,6 +10,8 @@ var Picture = require('mongoose').connection.model('Picture'),
 
 module.exports = {
     uploadPicture: function(req, res) {
+        var newPicture;
+
         req.pipe(req.busboy);
 
         req.busboy.on('file', function(fieldName, file, fileName) {
@@ -24,26 +26,23 @@ module.exports = {
             }
 
             file.on('data', function(data) {
-                var newPicture = {
-                    //buffer: zlib.deflateSync(data),
+                newPicture = {
                     buffer: data,
                     name: pictureName,
                     extension: fileExtension
                 };
+            });
 
+            file.on('end', function() {
                 Picture.create(newPicture, function(err, picture) {
                     if (err) {
                         res.send(400);
                         return;
                     }
 
-                    // res.contentType('image/' + picture.extension);
-                    // res.send(picture.buffer);
                     res.end();
                 });
             });
-
-            res.redirect('/');
         });
     },
     getImageById: function(req, res) {
