@@ -8,7 +8,8 @@ module.exports = function() {
     var databaseConnectionString;
 
     if (env === 'development') {
-        databaseConnectionString = 'mongodb://localhost:27017/AngularTestAppDb';
+        databaseConnectionString = 'mongodb://admin:admin@ds055872.mongolab.com:55872/angularjstestappdb';
+        // databaseConnectionString = 'mongodb://localhost:27017/AngularTestAppDb';
     } else {
         databaseConnectionString = 'mongodb://admin:admin@ds055872.mongolab.com:55872/angularjstestappdb';
     }
