@@ -44,12 +44,10 @@ module.exports = {
                         res.send(400);
                         return;
                     }
+
+                    res.redirect('/');
                 });
-
-                next();
             });
-
-            res.redirect('/');
         });
     },
     getImageById: function(req, res) {
